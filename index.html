@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Minesweeper</title>
+</head>
+
+<body>
+    <main class="game">
+        <header class="header border border-convex">
+            <article class="header-counter" data-counter>0</article>
+            <button class="header-reset border-concave" data-button-reset>
+                <svg class="header-button">
+                    <use href="images/sprite.svg#neutral"></use>
+                </svg>
+            </button>
+            <article class="header-counter" data-timer>0</article>
+        </header>
+        <article class="game-board border border-convex" data-board>
+
+        </article>
+        <article class="panel-game border border-convex">
+            <header class="panel-header">
+                <h1 class="panel-heading">Select difficulty</h1>
+            </header>
+            <section class="panel-buttons">
+                <button class="difficult-button" data-button-easy>Easy</button>
+                <button class="difficult-button" data-button-normal>Normal</button>
+                <button class="difficult-button" data-button-expert>Expert</button>
+            </section>
+        </article>
+        <article class="modal hide" data-modal>
+            <section class="modal-content">
+                <h2 class="modal-text" data-modal-header>You won!</h2>
+                <button class="modal-button" data-modal-button>Play again!</button>
+            </section>
+        </article>
+    </main>
+    <script src="js/Game.js" type="module"></script>
+</body>
+
+</html>

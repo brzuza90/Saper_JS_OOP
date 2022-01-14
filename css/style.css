@@ -1,0 +1,184 @@
+/* zmienne */
+:root {
+  --primary-color: #c0c0c0;
+  --primary-color-dark: #808080;
+  --alarm-color: #f80000;
+  
+  --info-one-color: #0200fc;
+  --info-two-color: #17e000;
+  --info-three-color: #ff0000;
+  --info-four-color: #010080;
+  --info-five-color: #7f0300;
+  --info-six-color: #008080;
+  --info-seven-color: #000;
+  --info-eight-color: #808080;
+
+  --cell-size: 40px;
+  --game-padding: 20px;
+  --border-width: 3px;
+  --cells-in-row: 8;
+  --game-max-width: calc(var(--cell-size) * var(--cells-in-row) + calc(2 * var(--game-padding)) + calc(4 * var(--border-width)))
+}
+@font-face {
+  font-family: DIGITALDREAM;
+  src: url("../images/DIGITALDREAM.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+}
+.game {
+  margin: 20px auto 0;
+  background-color: var(--primary-color);
+  padding: var(--game-padding);
+  border: var(--border-width) solid black;
+  max-width: var(--game-max-width);
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+.header-counter {
+  min-width: 120px;
+  padding: 5px;
+  background-color: black;
+  color: var(--alarm-color);
+  font-family: "DIGITALDREAM", sans-serif;
+  font-size: 2.8rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.header-reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+.header-button {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.game-board {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cell-is-flag {
+  background-image: url('../images/flag.svg');
+}
+.cell-is-mine {
+  background-image: url('../images/bomb.svg');
+  background-color: var(--alarm-color);
+}
+.cell-info-1 {
+  color: var(--info-one-color);
+}
+.cell-info-2 {
+  color: var(--info-two-color);
+}
+.cell-info-3 {
+  color: var(--info-three-color);
+}
+.cell-info-4 {
+  color: var(--info-four-color);
+}
+.cell-info-5 {
+  color: var(--info-five-color);
+}
+.cell-info-6 {
+  color: var(--info-six-color);
+}
+.cell-info-7 {
+  color: var(--info-seven-color);
+}
+.cell-info-8 {
+  color: var(--info-eight-color);
+}
+.panel-header {
+  text-align: center;
+  font-size: 24px;
+}
+.panel-game {
+  margin-top: 10px;
+  padding: 5px;
+}
+.panel-buttons {
+  margin-top: 20px;
+  display: flex;
+}
+.panel-buttons .difficult-button {
+  flex: 1;
+  padding: 25px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.modal-text {
+  font-size: 4.8rem;
+  text-align: center;
+}
+.modal-button {
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  border: 3px solid black;
+  padding: 1rem;
+  font-size: 2.4rem;
+  transition: 0.4s linear;
+}
+.modal-button:hover {
+  background-color: black;
+  color: white;
+}
+.modal.hide {
+  display: none;
+}
+.border {
+  border: var(--border-width) solid;
+}
+.border-convex {
+  border-color: var(--primary-color-dark) #fff #fff var(--primary-color-dark);
+}
+.border-concave {
+  border-color: #fff var(--primary-color-dark) var(--primary-color-dark) #fff;
+}
+.border-revealed {
+  border-width: 1px;
+  border-color: var(--primary-color-dark);
+}
